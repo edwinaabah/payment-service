@@ -13,11 +13,8 @@ def create_payment():
     if not order_id or not amount:
         return jsonify({"error": "Invalid data"}), 400
     
-    # Fetch order details from order service (if needed)
-    # Since you want to be independent of order_service, you may skip this or handle gracefully
-    order = {}  # Assuming no order details needed or available
-    
-    payment = {"order_id": order_id, "amount": amount, "order": order}
+    # Process payment logic here if needed
+    payment = {"order_id": order_id, "amount": amount}
     payments.append(payment)
     
     return jsonify(payment), 201
